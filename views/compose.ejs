@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Compose • My Blog' }) %>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="container">
+    <h1>Compose a Post</h1>
+
+    <% if (error) { %>
+      <div class="alert"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/compose" class="form">
+      <label>Title
+        <input name="title" required maxlength="120" value="<%= values.title || '' %>" placeholder="Enter a catchy title" />
+      </label>
+
+      <label>Content
+        <textarea name="content" rows="10" required placeholder="Write your post..."><%= values.content || '' %></textarea>
+      </label>
+
+      <div class="actions">
+        <a class="btn ghost" href="/">Cancel</a>
+        <button class="btn" type="submit">Publish</button>
+      </div>
+    </form>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: (post.title + ' • My Blog') }) %>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="container">
+    <a class="link" href="/">← Back to home</a>
+    <article class="post">
+      <h1><%= post.title %></h1>
+      <p class="muted"><%= new Date(post.createdAt).toLocaleString() %></p>
+      <div class="prose"><%= post.content %></div>
+    </article>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

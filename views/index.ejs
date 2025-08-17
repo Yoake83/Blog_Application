@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('partials/head', { pageTitle: 'Home • My Blog' }) %>
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="container">
+    <h1>Latest Posts</h1>
+
+    <% if (posts.length === 0) { %>
+      <div class="empty">
+        <p>No posts yet. Be the first!</p>
+        <a class="btn" href="/compose">Write a post</a>
+      </div>
+    <% } else { %>
+      <div class="grid">
+        <% posts.forEach(function(p){ %>
+          <article class="card">
+            <h2><a href="/posts/<%= p.slug %>"><%= p.title %></a></h2>
+            <p class="muted"><%= new Date(p.createdAt).toLocaleString() %></p>
+            <p class="preview"><%= p.content.length > 160 ? p.content.slice(0,160) + '…' : p.content %></p>
+            <a class="link" href="/posts/<%= p.slug %>">Read more →</a>
+          </article>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

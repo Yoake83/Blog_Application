@@ -1,0 +1,48 @@
+:root{
+  --bg: #0b0c10;
+  --card: #121318;
+  --text: #e6e6e6;
+  --muted: #a1a1aa;
+  --primary: #4f46e5;
+  --primary-ink: #ffffff;
+  --border: #20212a;
+  --shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:var(--bg); color:var(--text); line-height:1.6;
+}
+.container{max-width:980px; margin:0 auto; padding:24px}
+
+.site-header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(11,12,16,.6); border-bottom:1px solid var(--border);}
+.site-header .container{display:flex; align-items:center; justify-content:space-between}
+.brand{font-weight:800; letter-spacing:.3px; text-decoration:none; color:var(--text)}
+.site-header nav a{color:var(--text); text-decoration:none; margin-left:16px}
+
+.btn{display:inline-block; padding:10px 14px; border-radius:12px; background:var(--primary); color:var(--primary-ink); text-decoration:none; border:1px solid transparent; box-shadow:var(--shadow)}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:transparent; border-color:var(--border); color:var(--text)}
+
+h1,h2{line-height:1.2}
+.muted{color:var(--muted); font-size:.95rem}
+.link{color:var(--primary); text-decoration:none}
+.link:hover{text-decoration:underline}
+
+.grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(260px,1fr))}
+.card{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+.card h2{margin-top:0}
+.preview{opacity:.9}
+
+.empty{background:var(--card); border:1px dashed var(--border); border-radius:18px; padding:24px; text-align:center}
+
+.form{display:grid; gap:16px; max-width:720px}
+label{display:grid; gap:8px}
+input,textarea{width:100%; padding:12px 14px; border-radius:12px; background:#0f1117; border:1px solid var(--border); color:var(--text); font:inherit}
+.actions{display:flex; gap:12px; justify-content:flex-end}
+
+.post h1{margin-bottom:6px}
+.prose{white-space:pre-line; font-size:1.08rem}
+
+.site-footer{margin-top:40px; border-top:1px solid var(--border)} 
